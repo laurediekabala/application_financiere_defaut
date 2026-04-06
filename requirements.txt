@@ -1,0 +1,17 @@
+pandas
+numpy
+matplotlib
+scikit-learn
+seaborn
+xgboost
+statsmodels 
+prophet
+plotly
+sqlalchemy
+mysql-connector-python
+psycopg2
+streamlit
+duckdb==0.10.0
+shap
+joblib
+evidently==0.4.19
