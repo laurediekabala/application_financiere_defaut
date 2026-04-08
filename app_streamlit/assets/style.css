@@ -531,6 +531,45 @@ hr {
 /* =========================================================
    MASQUER ÉLÉMENTS STREAMLIT
 ========================================================= */
+/* =========================================================
+   HEADER STREAMLIT - RESTYLING PROPRE
+========================================================= */
+
+/* Header global */
+header[data-testid="stHeader"] {
+    background: rgba(248, 250, 252, 0.92) !important;
+    backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    height: 3.2rem !important;
+}
+
+/* Toolbar interne */
+header[data-testid="stHeader"] > div {
+    background: transparent !important;
+}
+
+/* Boutons / icônes du header */
+header[data-testid="stHeader"] button,
+header[data-testid="stHeader"] svg {
+    color: #334155 !important;
+    fill: #334155 !important;
+}
+
+/* Hover boutons */
+header[data-testid="stHeader"] button:hover {
+    background-color: rgba(37, 99, 235, 0.08) !important;
+    border-radius: 8px !important;
+}
+
+/* Rendre la zone du header plus élégante */
+[data-testid="stToolbar"] {
+    right: 1rem !important;
+}
+
+/* Option : harmoniser le fond sous le header */
+div[data-testid="stAppViewContainer"] > .main {
+    background: transparent !important;
+}
 #MainMenu {
     visibility: hidden;
 }
@@ -539,6 +578,3 @@ footer {
     visibility: hidden;
 }
 
-header {
-    visibility: hidden;
-}
