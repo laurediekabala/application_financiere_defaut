@@ -1,0 +1,467 @@
+/* =========================================================
+   FONTS & GLOBAL
+========================================================= */
+html, body, [class*="css"] {
+    font-family: "Inter", "Segoe UI", "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.stApp {
+    background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+    color: #0f172a;
+}
+
+/* Zone principale */
+.main .block-container {
+    max-width: 1450px;
+    padding-top: 1.8rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* =========================================================
+   SIDEBAR PREMIUM
+========================================================= */
+section[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #0b1220 0%, #111827 45%, #172033 100%);
+    border-right: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: 4px 0 24px rgba(2, 6, 23, 0.18);
+}
+
+/* Tous les textes sidebar */
+section[data-testid="stSidebar"] * {
+    color: #f8fafc !important;
+}
+
+/* Titres sidebar */
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.2px;
+}
+
+/* Labels sidebar */
+section[data-testid="stSidebar"] label {
+    color: #cbd5e1 !important;
+    font-weight: 600 !important;
+}
+
+/* Inputs sidebar */
+section[data-testid="stSidebar"] div[data-baseweb="select"] > div,
+section[data-testid="stSidebar"] div[data-baseweb="input"] > div {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.10) !important;
+    border-radius: 12px !important;
+    backdrop-filter: blur(6px);
+}
+
+section[data-testid="stSidebar"] div[data-baseweb="input"] input,
+section[data-testid="stSidebar"] div[data-baseweb="select"] input {
+    color: white !important;
+    -webkit-text-fill-color: white !important;
+}
+
+section[data-testid="stSidebar"] .stMarkdown {
+    color: #e2e8f0 !important;
+}
+
+/* =========================================================
+   TITRES HOMOGÈNES
+========================================================= */
+h1 {
+    font-size: 2.15rem !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    margin-bottom: 0.8rem !important;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 1.55rem !important;
+    line-height: 1.25 !important;
+    font-weight: 700 !important;
+    color: #1e293b !important;
+    margin-top: 1.2rem !important;
+    margin-bottom: 0.7rem !important;
+    letter-spacing: -0.01em;
+}
+
+h3 {
+    font-size: 1.15rem !important;
+    line-height: 1.3 !important;
+    font-weight: 650 !important;
+    color: #334155 !important;
+    margin-top: 1rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* ⚠️ Corrigé : ne plus cibler div et span globalement */
+p, li, label {
+    font-size: 0.96rem !important;
+}
+
+/* =========================================================
+   HEADER STRIP / BANNIÈRE VISUELLE
+========================================================= */
+.main .block-container h1:first-of-type {
+    background: linear-gradient(90deg, #0f172a 0%, #1d4ed8 60%, #2563eb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* =========================================================
+   CARTES / CONTAINERS
+========================================================= */
+[data-testid="stVerticalBlock"] > div {
+    border-radius: 16px;
+}
+
+/* Effet carte pour certains blocs */
+div[data-testid="stMetric"],
+div[data-testid="stDataFrame"],
+div[data-testid="stAlert"] {
+    border-radius: 16px !important;
+}
+
+/* =========================================================
+   KPI CARDS PREMIUM
+========================================================= */
+div[data-testid="stMetric"] {
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    border: 1px solid #e2e8f0;
+    padding: 1rem 1rem;
+    border-radius: 18px;
+    box-shadow:
+        0 6px 18px rgba(15, 23, 42, 0.05),
+        0 1px 2px rgba(15, 23, 42, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+div[data-testid="stMetric"]:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 10px 25px rgba(15, 23, 42, 0.08),
+        0 2px 6px rgba(15, 23, 42, 0.06);
+}
+
+div[data-testid="stMetricLabel"] {
+    color: #64748b !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 0.78rem !important;
+}
+
+div[data-testid="stMetricValue"] {
+    color: #0f172a !important;
+    font-weight: 800 !important;
+    font-size: 1.75rem !important;
+    letter-spacing: -0.02em;
+}
+
+/* =========================================================
+   FORMULAIRES / INPUTS
+========================================================= */
+div[data-baseweb="input"] > div,
+div[data-baseweb="select"] > div {
+    background: #ffffff !important;
+    border: 1px solid #d7dee8 !important;
+    border-radius: 12px !important;
+    box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.02);
+}
+
+div[data-baseweb="input"] > div:focus-within,
+div[data-baseweb="select"] > div:focus-within {
+    border: 1px solid #2563eb !important;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12) !important;
+}
+
+input, textarea {
+    color: #0f172a !important;
+    font-size: 0.95rem !important;
+}
+
+/* Labels */
+label {
+    color: #334155 !important;
+    font-weight: 600 !important;
+}
+
+/* =========================================================
+   SELECTBOX - TEXTE BIEN VISIBLE
+========================================================= */
+div[data-baseweb="select"] > div {
+    background: #ffffff !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 12px !important;
+}
+
+div[data-baseweb="select"] *,
+div[data-baseweb="select"] div,
+div[data-baseweb="select"] span,
+div[data-baseweb="select"] input {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+}
+
+div[data-baseweb="select"] svg {
+    fill: #334155 !important;
+}
+
+/* Menu déroulant */
+ul[role="listbox"] {
+    background: #ffffff !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.10) !important;
+}
+
+ul[role="listbox"] li,
+ul[role="listbox"] div,
+ul[role="listbox"] span {
+    color: #0f172a !important;
+    background: #ffffff !important;
+    opacity: 1 !important;
+}
+
+ul[role="listbox"] li:hover {
+    background: #eff6ff !important;
+    color: #1d4ed8 !important;
+}
+
+ul[role="listbox"] li[aria-selected="true"] {
+    background: #dbeafe !important;
+    color: #1e40af !important;
+    font-weight: 700 !important;
+}
+
+/* Sidebar selectbox */
+section[data-testid="stSidebar"] div[data-baseweb="select"] > div {
+    background: rgba(255, 255, 255, 0.10) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+}
+
+section[data-testid="stSidebar"] div[data-baseweb="select"] *,
+section[data-testid="stSidebar"] div[data-baseweb="select"] div,
+section[data-testid="stSidebar"] div[data-baseweb="select"] span,
+section[data-testid="stSidebar"] div[data-baseweb="select"] input {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+section[data-testid="stSidebar"] div[data-baseweb="select"] svg {
+    fill: #ffffff !important;
+}
+
+/* =========================================================
+   BOUTONS PREMIUM
+========================================================= */
+.stButton > button {
+    width: 100%;
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 45%, #1e40af 100%);
+    color: white !important;
+    border: none !important;
+    border-radius: 12px !important;
+    font-weight: 700 !important;
+    font-size: 0.96rem !important;
+    padding: 0.78rem 1.2rem !important;
+    box-shadow: 0 10px 22px rgba(37, 99, 235, 0.22);
+    transition: all 0.22s ease;
+}
+
+.stButton > button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 28px rgba(37, 99, 235, 0.28);
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+}
+
+.stButton > button:active {
+    transform: translateY(0px);
+}
+
+/* =========================================================
+   ALERTES - TEXTE BIEN VISIBLE
+========================================================= */
+div[data-testid="stAlert"] {
+    border: none !important;
+    border-radius: 14px !important;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.05);
+    opacity: 1 !important;
+}
+
+/* Tous les éléments internes */
+div[data-testid="stAlert"] *,
+div[data-testid="stAlert"] div,
+div[data-testid="stAlert"] p,
+div[data-testid="stAlert"] span,
+div[data-testid="stAlert"] label,
+div[data-testid="stAlert"] strong {
+    opacity: 1 !important;
+}
+
+/* SUCCESS */
+div[data-testid="stAlert"][kind="success"] {
+    background: #ecfdf3 !important;
+    border: 1px solid #a7f3d0 !important;
+}
+div[data-testid="stAlert"][kind="success"] *,
+div[data-testid="stAlert"][kind="success"] div,
+div[data-testid="stAlert"][kind="success"] p,
+div[data-testid="stAlert"][kind="success"] span,
+div[data-testid="stAlert"][kind="success"] label,
+div[data-testid="stAlert"][kind="success"] strong {
+    color: #065f46 !important;
+    fill: #065f46 !important;
+}
+
+/* WARNING */
+div[data-testid="stAlert"][kind="warning"] {
+    background: #fffbeb59 !important;
+    border: 1px solid #fde68a !important;
+}
+div[data-testid="stAlert"][kind="warning"] *,
+div[data-testid="stAlert"][kind="warning"] div,
+div[data-testid="stAlert"][kind="warning"] p,
+div[data-testid="stAlert"][kind="warning"] span,
+div[data-testid="stAlert"][kind="warning"] label,
+div[data-testid="stAlert"][kind="warning"] strong {
+    color: #92400e !important;
+    fill: #92400e !important;
+}
+
+/* INFO */
+div[data-testid="stAlert"][kind="info"] {
+    background: #eff6ff !important;
+    border: 1px solid #bfdbfe !important;
+}
+div[data-testid="stAlert"][kind="info"] *,
+div[data-testid="stAlert"][kind="info"] div,
+div[data-testid="stAlert"][kind="info"] p,
+div[data-testid="stAlert"][kind="info"] span,
+div[data-testid="stAlert"][kind="info"] label,
+div[data-testid="stAlert"][kind="info"] strong {
+    color: #1e3a8a !important;
+    fill: #1e3a8a !important;
+}
+
+/* ERROR */
+div[data-testid="stAlert"][kind="error"] {
+    background: #fef2f2 !important;
+    border: 1px solid #fecaca !important;
+}
+div[data-testid="stAlert"][kind="error"] *,
+div[data-testid="stAlert"][kind="error"] div,
+div[data-testid="stAlert"][kind="error"] p,
+div[data-testid="stAlert"][kind="error"] span,
+div[data-testid="stAlert"][kind="error"] label,
+div[data-testid="stAlert"][kind="error"] strong {
+    color: #991b1b !important;
+    fill: #991b1b !important;
+}
+
+/* =========================================================
+   TABLES / DATAFRAMES
+========================================================= */
+div[data-testid="stDataFrame"] {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 0.35rem;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+/* =========================================================
+   TABS
+========================================================= */
+button[data-baseweb="tab"] {
+    font-weight: 700 !important;
+    color: #475569 !important;
+    background: transparent !important;
+    border-radius: 12px 12px 0 0 !important;
+    padding: 0.6rem 0.9rem !important;
+}
+
+button[data-baseweb="tab"][aria-selected="true"] {
+    color: #2563eb !important;
+    border-bottom: 3px solid #2563eb !important;
+}
+
+/* =========================================================
+   EXPANDERS
+========================================================= */
+details {
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 0.6rem 0.9rem;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+/* =========================================================
+   HR
+========================================================= */
+hr {
+    border: none;
+    border-top: 1px solid #dbe4ee;
+    margin: 1.4rem 0;
+}
+
+/* =========================================================
+   PLOTLY / CHARTS
+========================================================= */
+.js-plotly-plot, .plotly, iframe {
+    border-radius: 18px !important;
+    overflow: hidden !important;
+}
+
+/* =========================================================
+   PETITES TOUCHES PREMIUM
+========================================================= */
+[data-testid="stMarkdownContainer"] a {
+    color: #2563eb !important;
+    text-decoration: none !important;
+    font-weight: 600;
+}
+
+[data-testid="stMarkdownContainer"] a:hover {
+    text-decoration: underline !important;
+}
+
+/* Scrollbar (webkit) */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #e2e8f0;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+/* =========================================================
+   MASQUER ÉLÉMENTS STREAMLIT
+========================================================= */
+#MainMenu {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
+
+header {
+    visibility: hidden;
+}
