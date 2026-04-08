@@ -3,6 +3,7 @@ import pandas as pd
 import plotly.graph_objects as go
 from utils.api_client import call_prediction_api
 from utils.helpers import risk_color
+from utils.alerte import show_alert
 import os 
 def load_css():
     current_dir = os.path.dirname(os.path.abspath(__file__))      # .../app_streamlit/pages
@@ -110,4 +111,4 @@ if st.button("🚀 Lancer la prédiction", use_container_width=True):
         st.plotly_chart(fig, use_container_width=True)
 
     except Exception as e:
-        st.error(f"Erreur : {e}")
+        show_alert(f"Erreur : {e}", alert_type="error")

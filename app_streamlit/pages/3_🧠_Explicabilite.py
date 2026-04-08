@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 from utils.nettoyer import clean_feature_names
+from utils.alerte import show_alert
 import os 
 def load_css():
     current_dir = os.path.dirname(os.path.abspath(__file__))      # .../app_streamlit/pages
@@ -15,7 +16,7 @@ load_css()
 st.title("🧠 Explicabilité")
 
 if "last_prediction" not in st.session_state:
-    st.warning("Aucune prédiction disponible. Veuillez d'abord lancer une analyse depuis la page Prédiction.")
+    show_alert("Aucune prédiction disponible. Veuillez d'abord lancer une analyse depuis la page Prédiction.", alert_type="warning")
 else:
     result = st.session_state["last_prediction"]
 

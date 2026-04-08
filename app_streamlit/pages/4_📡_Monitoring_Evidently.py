@@ -4,6 +4,7 @@ import pandas as pd
 import streamlit.components.v1 as components
 from evidently.report import Report
 from evidently.metric_preset import DataDriftPreset, DataQualityPreset
+from utils.alerte import show_alert
 
 st.set_page_config(page_title="Monitoring Evidently", layout="wide")
 def load_css():
@@ -39,11 +40,11 @@ current_path = os.path.join(DATA_DIR, "test.csv")
 # 2. VÉRIFICATION DES FICHIERS
 # ============================================================
 if not os.path.exists(reference_path):
-    st.error(f"❌ Fichier de référence introuvable : {reference_path}")
+    show_alert(f"❌ Fichier de référence introuvable : {reference_path}", alert_type="error")
     st.stop()
 
 if not os.path.exists(current_path):
-    st.error(f"❌ Fichier courant introuvable : {current_path}")
+    show_alert(f"❌ Fichier courant introuvable : {current_path}", alert_type="error")
     st.stop()
 
 # ============================================================
@@ -107,7 +108,7 @@ for metric in report_dict["metrics"]:
         break
 
 if drift_data is None:
-    st.error("Impossible d'extraire les résultats de drift depuis Evidently.")
+    show_alert("Impossible d'extraire les résultats de drift depuis Evidently.", alert_type="error")
     st.stop()
 
 n_cols = drift_data["number_of_columns"]
@@ -172,13 +173,12 @@ st.subheader("📝 Synthèse automatique")
 top_drift_features = drift_df[drift_df["drift_detected"] == True]["feature"].head(5).tolist()
 
 if len(top_drift_features) == 0:
-    st.success(
-        "Aucune dérive significative n’a été détectée sur les variables analysées. "
-        "Le modèle semble opérer dans un environnement de données stable."
-    )
+  
+    show_alert( "Aucune dérive significative n’a été détectée sur les variables analysées. "
+        "Le modèle semble opérer dans un environnement de données stable.", alert_type="success")
 else:
-    st.warning(
-        f"""
+
+    show_alert(  f"""
         Une dérive a été détectée sur **{n_drifted} variables sur {n_cols}**, soit **{share_drifted:.1%}** des colonnes.
         
         Les variables les plus sensibles sont :
@@ -187,8 +187,7 @@ else:
         Cela signifie que les données courantes s’éloignent de la distribution du jeu de référence.
         Une surveillance renforcée du modèle est recommandée, et un recalibrage ou réentraînement
         peut devenir nécessaire si cette dérive persiste.
-        """
-    )
+        """, alert_type="warning")
 
 # ============================================================
 # 9. TABLEAU DES VARIABLES EN DRIFT
